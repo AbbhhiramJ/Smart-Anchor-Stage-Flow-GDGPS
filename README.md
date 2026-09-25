@@ -1,23 +1,22 @@
 # StagePilot — Smart Anchor & Stage Flow (GDGPS)
 
-A polished interactive event-operations prototype for Bit N Build ’26. StagePilot helps organizers respond to a schedule disruption, inspect the downstream impact, approve a revised run-of-show, and refresh anchor cues and crew briefing.
+StagePilot is a browser-based event run-of-show workspace. Organizers can configure an event, edit and add sessions, review a disruption impact, approve a revised schedule, and export the updated run-of-show and team briefing.
 
-## Live demo
+## Live workspace
 https://stagepilot-smart-anchor-gdgps.vercel.app
 
-## What to explore
-- Review the seeded Campus Innovation Night agenda and live timeline.
-- Simulate a 20-minute keynote delay or enter a custom delay.
-- Inspect the proposed schedule changes before approving.
-- Approve the revision to update the run-of-show, anchor cue, and team briefing.
-- Export the schedule or copy/download the briefing.
-- Use the page's Contact and GitHub links to connect with the builder or inspect source.
+## Use it
+1. Edit the event name, venue, date, and organizer. Save event details.
+2. Edit session titles, owners, start/end times; add or remove sessions. Save the run of show.
+3. Choose the session affected and enter a delay, or use the 20-minute quick action.
+4. Review the proposed schedule. Approve it to update the agenda, cue card, and briefing.
+5. Export the run-of-show CSV or copy/download the briefing.
+
+## Persistence and limitations
+Event data is stored in local browser storage on the device/browser used. It is a single-organizer workspace; there is no shared cloud database, login, venue integration, or automatic external messaging. Back up/export the plan before clearing browser data or switching devices.
 
 ## Run locally
-Open `index.html` in a modern browser. No build step, API key, or install required.
-
-## Design and implementation notes
-The app is a self-contained HTML/CSS/JavaScript prototype. It uses seeded sample data and deterministic browser-side scheduling rules. It does not use a live LLM, venue integrations, or send external messages. Organizer approval is required before applying a proposed schedule change.
+Open `index.html` in a modern browser. No install, build step, or API key required.
 
 ## Contact
 Abbhhiram Jadhav · https://Abbhhi.dev · abbhhiram25@gmail.com
