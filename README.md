@@ -1,24 +1,27 @@
 # StagePilot — Smart Anchor & Stage Flow (GDGPS)
 
-StagePilot is an event operations workspace for reviewing schedule disruptions, approving run-of-show changes, and preparing anchor/crew communications.
+Event operations workspace for run-of-show planning, disruption review, organizer approval, and anchor/crew briefing.
 
 ## Pages
-- **Overview:** `index.html` — product introduction and guided experience entry.
-- **Control room:** `control-room.html` — disruption simulator, impact review, approval, and updated briefing.
-- **Event workspace:** `workspace.html` — event setup, agenda editor, plan library, backups, and cloud sign-in/sync.
-- **Contact:** `contact.html` — builder contact and project/source links.
+- `index.html` — overview and guided product introduction.
+- `control-room.html` — disruption simulator, impact review, approval, and briefing.
+- `workspace.html` — event setup, agenda editor, local event library, backup/restore, cloud save/load.
+- `login.html` — dedicated Supabase sign-in, account creation, and password reset page.
+- `contact.html` — builder contact and project links.
 
 Live app: https://stagepilot-smart-anchor-gdgps.vercel.app
 
+## Authentication
+Sign-in uses the existing Supabase Auth project. Users can sign in, create accounts, request password-reset email, and return to the workspace after authentication. Account confirmation may be required. The page uses only the public anon key; RLS protects cloud event data.
+
 ## Try it
-Open Control room, simulate a 20-minute keynote delay, review the impact, and approve the revised plan. Sample demo data is used; no external messages are sent.
+Open Control room, simulate a 20-minute keynote delay, review the impact, and approve the revised plan. Demo uses sample data; no external messages are sent.
 
 ## Features
 - Event setup and editable agenda with time validation and overlap checks.
 - Delay impact review with organizer approval; revised timeline and briefing.
 - Anchor cue and crew briefing; CSV export, print view, JSON backup/restore.
-- Supabase email/password authentication and explicit cloud save/load.
-- Postgres row-level security, owner-scoped access, membership-role schema, activity records.
+- Optional Supabase cloud save/load for event plans.
 
-## Security and scope
-The browser uses only the Supabase public anon key; privileged service-role credentials are not shipped. RLS restricts event data. Password minimum is 12 characters; unverified email sign-ins are disabled. This release is a single-organizer cloud-enabled workspace; team invitation UI, live multi-user editing, multi-person approval chains, outbound notifications, SSO, and formal operational monitoring are not implemented.
+## Scope
+This release is a single-organizer cloud-enabled workspace. Team invitations, live multi-user editing, multi-person approval chains, outbound notifications, SSO, and formal operational monitoring are not implemented.
