@@ -1,35 +1,29 @@
 # StagePilot — Smart Anchor & Stage Flow (GDGPS)
 
-StagePilot is an event operations workspace for maintaining a run-of-show, reviewing schedule disruptions, approving changes, and preparing anchor/crew communications.
+Event operations workspace for run-of-show planning, disruption review, organizer approval, and anchor/crew briefing.
 
-## Production workspace
+## Live app
 https://stagepilot-smart-anchor-gdgps.vercel.app
 
-## Current capabilities
-- Configure event name, venue, date, organizer, and agenda sessions.
-- Manage multiple local event plans, add/remove sessions, validate times and prevent overlaps.
-- Review and approve downstream schedule shifts while preserving session durations.
-- Prepare cue and crew briefing text; export CSV, print the schedule, and download/restore JSON backups.
-- Create an account/sign in through Supabase Auth.
-- Save and load events and agenda items in Supabase Postgres, scoped by authenticated account and database RLS.
-- Record event plan changes in the activity table.
+## Features
+- Event setup, editable agenda, add/remove sessions, time validation and overlap checks.
+- Delay impact review and approval; session durations are preserved and the revised end time is surfaced.
+- Anchor cue and crew briefing; CSV export, print view, JSON backup/restore.
+- Supabase email/password authentication and cloud save/load for event plans and agenda.
+- Postgres RLS policies, owner-scoped access, membership-role schema, and activity records.
 
-## Data and security model
-- Frontend uses only the Supabase public anon key; privileged service-role credentials are not shipped to the browser.
-- Postgres RLS protects events, membership, agenda items, and activity records.
-- Events are owner-scoped by default. Membership roles (`owner`, `manager`, `crew`, `viewer`) are represented in the schema.
-- Browser-local workspace remains available without sign-in; cloud saves are explicit.
+## Security and limitations
+The browser contains only the Supabase public anon key; privileged service-role keys are not included. RLS protects event data. Password minimum is 12 characters; unverified email sign-ins are disabled. Breached-password screening is not enabled because Supabase requires a paid plan for that feature.
 
-## Current operational boundaries
-This release supports authenticated cloud save/load for an individual account. It does not yet expose team invitations or a user/role management screen, real-time collaborative editing, approval chains across users, scheduled email/SMS/WhatsApp delivery, venue/calendar integrations, or a formal enterprise SSO setup. Those require additional product work and operational configuration.
+This is a cloud-enabled single-organizer release, not a complete enterprise collaboration suite. Team invitation/role-management UI, real-time shared editing, multi-person approval workflows, automated email/SMS/WhatsApp notifications, calendar/venue integrations, SSO, and formal operational monitoring are not yet implemented. Membership roles exist in the schema but are not yet manageable through the app.
 
-Email confirmation is enabled by default. Sign up with an address you can access, confirm the email if prompted, then sign in.
+Email confirmation is enabled. Create an account with an accessible email address, confirm it if prompted, then sign in.
 
-## Database setup
-Supabase project: `hmpilxqzsnfjzqdeuwtd` (Mumbai region). SQL migrations are stored in `supabase/migrations/`.
+## Database
+Supabase project `hmpilxqzsnfjzqdeuwtd`, Mumbai region. SQL migration: `supabase/migrations/202609250820_stagepilot_core.sql`.
 
-## Run locally
-Open `index.html` in a modern browser. No build step is required. Supabase cloud features require network access.
+## Local run
+Open `index.html` in a modern browser. Cloud features need internet access.
 
 ## Contact
 Abbhhiram Jadhav · https://Abbhhi.dev · abbhhiram25@gmail.com
