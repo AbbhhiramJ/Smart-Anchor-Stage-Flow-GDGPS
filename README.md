@@ -1,22 +1,25 @@
 # StagePilot — Smart Anchor & Stage Flow (GDGPS)
 
-StagePilot is a browser-based event run-of-show workspace. Organizers can configure an event, edit and add sessions, review a disruption impact, approve a revised schedule, and export the updated run-of-show and team briefing.
+StagePilot is a browser-based event operations workspace for building and maintaining run-of-show plans, reviewing schedule disruptions, approving changes, and preparing anchor/crew communications.
 
-## Live workspace
+## Live app
 https://stagepilot-smart-anchor-gdgps.vercel.app
 
-## Use it
-1. Edit the event name, venue, date, and organizer. Save event details.
-2. Edit session titles, owners, start/end times; add or remove sessions. Save the run of show.
-3. Choose the session affected and enter a delay, or use the 20-minute quick action.
-4. Review the proposed schedule. Approve it to update the agenda, cue card, and briefing.
-5. Export the run-of-show CSV or copy/download the briefing.
+## Operational features
+- Manage multiple event plans in the same browser workspace.
+- Configure event name, venue, date, and organizer.
+- Add, edit, and remove agenda sessions and assign speakers/owners.
+- Validate session time ranges and prevent overlapping sessions.
+- Review a selected-session delay before approval; downstream session durations are preserved and the event end shift is shown.
+- Maintain plan version, anchor cue, and crew briefing.
+- Export the run of show as CSV, download a JSON event backup, restore a backup, and print the run of show.
+- Persist plans in browser storage.
 
-## Persistence and limitations
-Event data is stored in local browser storage on the device/browser used. It is a single-organizer workspace; there is no shared cloud database, login, venue integration, or automatic external messaging. Back up/export the plan before clearing browser data or switching devices.
+## Important deployment limits
+This version is a single-organizer browser application. Data is stored in the current browser/device and is not shared with other organizers. It does not provide account authentication, cloud database synchronization, live multi-user collaboration, venue integrations, or automatic email/SMS/WhatsApp messaging. Use JSON backups to transfer plans. A production multi-user rollout requires a secure backend, authentication, role-based access, audit history, and server-side persistence.
 
 ## Run locally
-Open `index.html` in a modern browser. No install, build step, or API key required.
+Open `index.html` in a modern browser. No build step, install, or API key is required.
 
 ## Contact
 Abbhhiram Jadhav · https://Abbhhi.dev · abbhhiram25@gmail.com
